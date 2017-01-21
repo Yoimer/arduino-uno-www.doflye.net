@@ -1,0 +1,36 @@
+# This document was made using Arduino IDE 1.6.5 by Yoimer Román on January 21, 2017 Caracas Venezuela
+
+# Make sure the ARDUINO UNO R3.0 board bought at www.doflye.net is recongnized by your PC following instructions below.
+# In this case we are using Windows XP SP3 English language.
+# Get the drivers for his board at http://www.winchiphead.com/download/CH341/CH341SER.ZIP
+# The CH341SER.EXE file is on the IDE-1.6.5 folder also.
+# Install the drivers.
+# Right Click on My Computer, Properties, Hardware, Device Manager, Ports(COM & LPT)
+# When plugging the board on any USB available port; you should see it on Device Manager as USB-SERIAL CH340 (COM number).
+
+# Get on C:\Program Files\Arduino\hardware\arduino\avr
+
+# Open boards.txt file with notepad.
+
+# Add AT THE END of boards.txt file copy the code below and save it.
+
+############################################################## By me ydrf January 21, 2017
+# Custom board "Arduino Optiboot8"
+# Arduino uno r3 ATMEGA8A-PU
+opti8.upload.tool=avrdude
+opti8.name = Arduino Optiboot8
+opti8.upload.protocol = Arduino
+opti8.upload.maximum_size = 7680
+opti8.upload.speed = 115200
+opti8.bootloader.low_fuses = 0xBF
+opti8.bootloader.high_fuses = 0xcc
+opti8.bootloader.path = optiboot
+opti8.bootloader.file = optiboot_atmega8.hex
+opti8.bootloader.unlock_bits = 0x3F
+opti8.bootloader.lock_bits = 0x0F
+opti8.build.mcu = atmega8
+opti8.build.f_cpu = 16000000L
+opti8.build.core = arduino
+opti8.build.variant = standard
+
+# This should be enough to upload skecthes on the board. Check the Done Uploading Working!.JPG file.
